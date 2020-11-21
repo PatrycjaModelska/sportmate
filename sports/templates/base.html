@@ -1,0 +1,119 @@
+{% load static %}
+
+<html lang="pl-PL">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Robert Kalinowski, Wojtek Wawrzyniak">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Plik CSS - Aplikacja -->
+
+    <title>
+        SportsMate
+    </title>
+
+  </head>
+
+<body>
+
+        <nav class="navbar navbar-expand-lg navbar-light" role="navigation" style="background-color: #e3f2fd;">
+            <div class="container">
+                <a class="navbar-brand" href="#">SMate</a>
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                    &#9776;
+                </button>
+                <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item"><a href="#" class="nav-link">Znajdź obiekt sportowy</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Ustawienia</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Wybierz sport</a>
+                            <div class="dropdown-menu" style="background-color: #e3f2fd;">
+                              <a class="dropdown-item" href="#">
+                                <img src="{% static 'icons/iconfinder_Ball_basketball_sports_game_play_4843006.png' %}" height="42" width="42"> koszykówka
+                              </a>
+                              <a class="dropdown-item" href="#">
+                                <img src="{% static 'icons/iconfinder_Ball_game_sports_table_tennis_4843044.png' %}" height="42" width="42"> tenis
+                              </a>
+                              <a class="dropdown-item" href="#">
+                                <img src="{% static 'icons/iconfinder_Ball_sport_volleyball_game_beach_4843010.png' %}" height="42" width="42"> siatkówka
+                              </a>
+                              <a class="dropdown-item" href="#">
+                                <img src="{% static 'icons/iconfinder_billiard_pool_sport_game_ball_4843016.png' %}" height="42" width="42"> bilard
+                              </a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                        <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
+                        <li class="dropdown order-1">
+                            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Zaloguj<span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-right mt-2">
+                               <li class="px-3 py-2">
+                                   <form class="form" role="form">
+                                        <div class="form-group">
+                                            <input id="emailInput" placeholder="Username" class="form-control form-control-sm" type="text" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary btn-block">Zaloguj</button>
+                                        </div>
+                                        <div class="form-group text-center">
+                                            <small><a href="#" data-toggle="modal" data-target="#modalPassword">Nie pamiętasz hasła?</a></small>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Forgot password</h3>
+                        <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Reset your password..</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                        <button class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <section>
+        <div class="container">
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+            <span class="text-muted">SportsMate</span>
+            <span class="text-muted">Kontakt</span>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+  </body>
+</html>
